@@ -74,3 +74,17 @@ uninstall:
 	- rmdir $(DESTDIR)$(LIBDIR)
 
 .PHONY: all options distclean clean dist install uninstall
+
+#WebApps installation
+
+install_whatsapp: prepare_webapps
+	sed 's/USER/${USERNAME}/g' ./webapps/whatsapp/whatsapp.desktop >> ~/.local/share/applications/whatsapp.desktop
+	cp ./webapps/whatsapp/whatsapp.png ~/.icons/surf/
+
+uninstall_whatsapp:
+	rm ~/.local/share/applications/whatsapp.desktop
+	rm ~/.icons/surf/whatsapp.png
+
+prepare_webapps: 
+	[ -d ~/.local/share/applications ] || mkidr ~/.local/share/applications
+	[ -d ~/.icons/surf ] || mkdir ~/.icons/surf/

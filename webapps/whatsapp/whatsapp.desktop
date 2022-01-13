@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=WhatsApp
+Exec=surf -g https://web.whatsapp.com/
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;
+Icon= /home/USER/.icons/surf/whatsapp.png
+X-Purism-FormFactor=Workstation;Mobile;
